@@ -113,21 +113,21 @@ object Relation:
     val gg = ord.cmp(x.greater, y.greater)
 
     (ll, lg, gl, gg) match
-      case (EQ, _, _, EQ)  => Relation.Equal
-      case (_, _, LT, _)   => Relation.Before
-      case (LT, _, EQ, LT) => Relation.Meets
-      case (_, _, EQ, _)   => Relation.Overlaps
-      case (GT, EQ, _, GT) => Relation.MetBy
-      case (_, EQ, _, _)   => Relation.OverlappedBy
-      case (_, GT, _, _)   => Relation.After
-      case (LT, _, _, LT)  => Relation.Overlaps
-      case (LT, _, _, EQ)  => Relation.FinishedBy
-      case (LT, _, _, GT)  => Relation.Contains
-      case (EQ, _, _, LT)  => Relation.Starts
-      case (EQ, _, _, GT)  => Relation.StartedBy
-      case (GT, _, _, LT)  => Relation.During
-      case (GT, _, _, EQ)  => Relation.Finishes
-      case (GT, _, _, GT)  => Relation.OverlappedBy
+      case (EQ, _, _, EQ)  => Equal
+      case (_, _, LT, _)   => Before
+      case (LT, _, EQ, LT) => Meets
+      case (_, _, EQ, _)   => Overlaps
+      case (GT, EQ, _, GT) => MetBy
+      case (_, EQ, _, _)   => OverlappedBy
+      case (_, GT, _, _)   => After
+      case (LT, _, _, LT)  => Overlaps
+      case (LT, _, _, EQ)  => FinishedBy
+      case (LT, _, _, GT)  => Contains
+      case (EQ, _, _, LT)  => Starts
+      case (EQ, _, _, GT)  => StartedBy
+      case (GT, _, _, LT)  => During
+      case (GT, _, _, EQ)  => Finishes
+      case (GT, _, _, GT)  => OverlappedBy
   end from
 
   /** [[Interval]] `x` is before [[Interval]] `y`.
