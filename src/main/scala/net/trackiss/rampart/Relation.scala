@@ -2,12 +2,12 @@ package net.trackiss.rampart
 
 import scala.annotation.targetName
 
-/** This type describes how two [[Interval]]s relate to each other. Each
-  * constructor represents one of the 13 possible relations. Taken together
-  * these relations are mutually exclusive and exhaustive.
+/** This type describes how two [[Interval]]s relate to each other. Each value
+  * represents one of the 13 possible relations. Taken together these relations
+  * are mutually exclusive and exhaustive.
   *
-  * Use `Relation.from(x, y)` to determine the relation between [[Interval]] x
-  * and [[Interval]] y.
+  * Use `Relation.from(x, y)` to determine the relation between [[Interval]] `x`
+  * and [[Interval]] `y`.
   *
   * The following image shows all 13 possible [[Interval]] relations. If for
   * whatever reason you can't see the image, each constructor for this type has
@@ -19,8 +19,6 @@ sealed trait Relation:
   /** Inverts a [[Relation]]. Every [[Relation]] has an inverse.
     *
     * {{{
-    * import Relation.*
-    *
     * assert(Before.inverted       == After)
     * assert(After.inverted        == Before)
     * assert(Meets.inverted        == MetBy)
@@ -72,8 +70,6 @@ object Relation:
   /** Determine the relation between [[Interval]] x and [[Interval]] y.
     *
     * {{{
-    * import Relation.*
-    *
     * assert(Relation.from(Interval(1, 2), Interval(3, 7)) == Before)
     * assert(Relation.from(Interval(2, 3), Interval(3, 7)) == Meets)
     * assert(Relation.from(Interval(2, 4), Interval(3, 7)) == Overlaps)
@@ -93,8 +89,6 @@ object Relation:
     * surprising when the intervals share an endpoint.
     *
     * {{{
-    * import Relation.*
-    *
     * assert(Relation.from(Interval(3, 3), Interval(3, 7)) == Overlaps)
     * assert(Relation.from(Interval(7, 7), Interval(3, 7)) == OverlappedBy)
     * assert(Relation.from(Interval(3, 7), Interval(3, 3)) == OverlappedBy)

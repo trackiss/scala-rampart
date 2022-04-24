@@ -83,7 +83,7 @@ final case class Interval[T: Ordering] private (private val x: T, private val y:
   def nonEmpty: Boolean = x != y
 
   /** Relates this [[Interval]] and that [[Interval]]. Calling `x.relate(y)`
-    * tells you how [[Interval]] x relates to [[Interval]] y. Consult the
+    * tells you how [[Interval]] `x`` relates to [[Interval]] `y`. Consult the
     * [[Relation]] documentation for an explanation of all the possible results.
     *
     * @see
