@@ -1,4 +1,4 @@
-package com.github.trackiss.rampart
+package net.trackiss.rampart
 
 object OrderingUtil:
   enum CompareResult:

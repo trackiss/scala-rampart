@@ -1,4 +1,4 @@
-package com.github.trackiss.rampart
+package net.trackiss.rampart
 
 import org.scalatest.freespec.AnyFreeSpecLike
 import org.scalatest.matchers.should.Matchers
