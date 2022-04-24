@@ -1,7 +1,5 @@
 package com.github.trackiss.rampart
 
-import java.time.Instant
-import scala.Tuple.InverseMap
 import scala.math.Ordering.Implicits.*
 
 /** This class provides types and functions for defining intervals and
