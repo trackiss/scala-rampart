@@ -1,0 +1,13 @@
+name: Scan sbt dependencies
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  scan-dependencies:
+    name: Scan dependencies and report to GitHub
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: scalacenter/sbt-dependency-submission@v2
